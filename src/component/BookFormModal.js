@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
-import {Modal,Button} from 'react-bootstrap/'
+import { Modal, Button } from 'react-bootstrap/'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 export class BookFormModal extends Component {
 
-    
-    
+
+
     render() {
         return (
             <div>
