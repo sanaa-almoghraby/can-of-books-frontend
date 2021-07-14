@@ -23,13 +23,16 @@ class MyFavoriteBooks extends React.Component {
     }
   }
   componentDidMount = async () => {
+
+    // const { user } = this.props.auth0.email;
+
     const { email } = this.props.auth0;
     this.setState({
       myEmail: email
     })
     let resData = await axios.get(`${process.env.REACT_APP_BOOK}book?myEmail=${this.props.auth0.user.email}`)
 
-    await this.setState({
+    this.setState({
       dataofBooks: resData.data,
       showData: true
     })
@@ -108,6 +111,32 @@ class MyFavoriteBooks extends React.Component {
   render() {
     return (
       <Jumbotron>
+        <h1>My Favorite Books</h1>
+        <p>
+          This is a collection of my favorite books
+        </p>
+        <div className="bookcont">
+          {this.state.showData &&
+            this.state.dataofBooks.map((book, index) => {
+              return (
+                <div key={index}>
+                  <Card >
+
+                    <Card.Body>
+                      <Card.Title>{book.name}</Card.Title>
+                      <Card.Text>
+                        {book.description}
+                      </Card.Text>
+                      <Card.Text>
+                        {book.status}
+                      </Card.Text>
+                      <Card.Img src={book.img} alt={book.name} />
+                    </Card.Body>
+                  </Card>
+                </div>
+
+              )
+            })
         <>
           <Button variant="dark" onClick={this.handlerShow}>
             Add  Book
