@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-
-import Modal from 'react-bootstrap/'
-export class BookFormModal extends Component {
+import { Modal, Button } from 'react-bootstrap/'
+import 'bootstrap/dist/css/bootstrap.min.css';
+ class BookFormModal extends React.Component {
 constructor(props){
     super(props);
     this.state = {
@@ -17,18 +17,16 @@ handleShow=()=>{
 
 }
 
-import { Modal, Button } from 'react-bootstrap/'
-import 'bootstrap/dist/css/bootstrap.min.css';
 
-export class BookFormModal extends Component {
+
 
     render() {
         return (
-            <div>
-                <Button variant="primary" onClick={this.handleShow}>
+            <>
+                {/* <Button variant="primary" onClick={this.handleShow}>
                     ADD BOOK
-                </Button>
-
+                </Button> */}
+{/* 
                 <Modal show={this.state.showmodel} onHide={this.handleShow}>
                     <Modal.Header closeButton>
                         <Modal.Title>Add Book To Favorites</Modal.Title>
@@ -40,7 +38,7 @@ export class BookFormModal extends Component {
                         </Button>
                         <Button variant="primary" onClick={handleClose}>
                             Save Changes
-                        </Button>
+                        </Button> */}
 
                 <Modal show={this.props.showModel}>
                     <Modal.Header>
@@ -65,9 +63,9 @@ export class BookFormModal extends Component {
                         </Button>
                     </Modal.Footer>
                 </Modal>
-            </div>
+            </>
         )
     }
 }
 
-export default BookFormModal
+export default BookFormModal;

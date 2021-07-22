@@ -63,3 +63,13 @@ Start time: __2pm___
 Finish time: __not finish___
 
 Actual time needed to complete: __idont know___
+==============================================================================================
+Name of feature: _______________class lab14_________________
+
+Estimate of time needed to complete: __6h___
+
+Start time: __2pm___
+
+Finish time: __9pm___
+
+Actual time needed to complete: __6h___

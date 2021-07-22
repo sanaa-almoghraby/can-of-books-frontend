@@ -89,9 +89,10 @@ class MyFavoriteBooks extends React.Component {
   }
   updateFun = async (e) => {
     e.preventDefault();
-
+    const { user } = this.props.auth0;
     let bookObj = {
 
+      email: user.email,
       name: e.target.bookName.value,
       description: e.target.description.value,
       status: e.target.state.value,
@@ -111,33 +112,7 @@ class MyFavoriteBooks extends React.Component {
   render() {
     return (
       <Jumbotron>
-        <h1>My Favorite Books</h1>
-        <p>
-          This is a collection of my favorite books
-        </p>
-        <div className="bookcont">
-          {this.state.showData &&
-            this.state.dataofBooks.map((book, index) => {
-              return (
-                <div key={index}>
-                  <Card >
-
-                    <Card.Body>
-                      <Card.Title>{book.name}</Card.Title>
-                      <Card.Text>
-                        {book.description}
-                      </Card.Text>
-                      <Card.Text>
-                        {book.status}
-                      </Card.Text>
-                      <Card.Img src={book.img} alt={book.name} />
-                    </Card.Body>
-                  </Card>
-                </div>
-
-              )
-            })
-        <>
+        <div>
           <Button variant="dark" onClick={this.handlerShow}>
             Add  Book
           </Button>
@@ -154,6 +129,7 @@ class MyFavoriteBooks extends React.Component {
 
             {this.state.showData &&
               this.state.dataofBooks.map((book, index) => {
+
 
 
                 return (
@@ -182,7 +158,7 @@ class MyFavoriteBooks extends React.Component {
 
             }
           </div>
-        </>
+        </div>
       </Jumbotron>
 
     )
