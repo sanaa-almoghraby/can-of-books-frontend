@@ -109,7 +109,7 @@ class MyFavoriteBooks extends React.Component {
   render() {
     return (
       <Jumbotron>
-        <>
+        <div>
           <Button variant="dark" onClick={this.handlerShow}>
             Add  Book
           </Button>
@@ -154,7 +154,7 @@ class MyFavoriteBooks extends React.Component {
 
             }
           </div>
-        </>
+        </div>
       </Jumbotron>
 
     )
