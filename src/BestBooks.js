@@ -23,13 +23,16 @@ class MyFavoriteBooks extends React.Component {
     }
   }
   componentDidMount = async () => {
+
+    // const { user } = this.props.auth0.email;
+
     const { email } = this.props.auth0;
     this.setState({
       myEmail: email
     })
     let resData = await axios.get(`${process.env.REACT_APP_BOOK}book?myEmail=${this.props.auth0.user.email}`)
 
-    await this.setState({
+    this.setState({
       dataofBooks: resData.data,
       showData: true
     })
@@ -128,7 +131,7 @@ class MyFavoriteBooks extends React.Component {
               this.state.dataofBooks.map((book, index) => {
 
 
-                
+
                 return (
                   <Card key={index} style={{ display: "inline-block", width: "200" }} >
 
