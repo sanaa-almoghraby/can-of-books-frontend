@@ -86,9 +86,10 @@ class MyFavoriteBooks extends React.Component {
   }
   updateFun = async (e) => {
     e.preventDefault();
-
+    const { user } = this.props.auth0;
     let bookObj = {
 
+      email: user.email,
       name: e.target.bookName.value,
       description: e.target.description.value,
       status: e.target.state.value,
